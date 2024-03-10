@@ -1,7 +1,9 @@
 ﻿
+using System;
+
 namespace CSharp004
 {
-    internal class Array
+    internal class CArray
     {
         // <배열>
         // Array 클래스를 통해 구현되어 있음
@@ -17,18 +19,29 @@ namespace CSharp004
         {
             //////////////////////////////////////////////////////////////////////////////////////
             // int[] scores = new int[5];
-            //scores.GetLength(0);
+            //scores.GetLength(0); 
             int[] array = { 1, 3, 6, 6, 8 };
             int length = array.Length; // 배열의 크기
             Console.WriteLine(length); // 5
             int max = array.Max();
             Console.WriteLine(max); // 8
 
-            //Array.Sort(array);
-            //Array.Reverse(array);
-            //Array.Resize(ref array, 7);
-            //int idx = Array.Indexof(array, 3);
-            //Console.WriteLine(array.Length);
+
+            Array.Sort(array);
+            Array.Reverse(array);
+            Array.Resize(ref array, 7);
+            int idx = Array.IndexOf(array, 3);
+            Console.WriteLine(array.Length);
+
+            int[] cArray1 = { 1, 2 };
+            int[] cArray2 = new int[cArray1.Length];
+            Array.Copy(cArray1, cArray2, cArray1.Length);
+
+            foreach (int item in cArray2)
+            {
+                Console.WriteLine(item);
+            }
+
 
             int[] shallow = array;  // 배열의 얕은 복사 : 동일한 인스턴스  참조
             int[] deep = new int[array.Length]; // 깊은 복사 : 새로운 인스턴스를 생성하고 복사
@@ -43,7 +56,7 @@ namespace CSharp004
             Console.WriteLine(matrix.GetLength(0)); // 3
             Console.WriteLine(matrix.GetLength(1)); // 4
 
-            int[,] tile = { {1,2,3, }, { 4, 5, 6, },   };
+            int[,] tile = { {1,2,3, }, { 4, 5, 6, }, };
 
             for (int i = 0; i < tile.GetLength(0); i++) 
             {
@@ -86,6 +99,8 @@ namespace CSharp004
             //    left = right;
             //    right = temp;
         }
-     }
+
+       
+    }
 }
 

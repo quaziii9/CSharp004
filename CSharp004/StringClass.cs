@@ -1,6 +1,4 @@
-﻿
-
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Text;
 
 
@@ -58,10 +56,10 @@ namespace CSharp004
             //// abc, def , abc123, abc123def : 가비지 컬렉터 대상
             //string str3 = "abc" + 123 + "def" + 456;
 
-            //string str4 = string.Format("abc{0}def{1}", 123, 456);
+            //string str4 = string.Format("abc{0}def{1}", 123, 456); // 중괄호를 이용하여 코드에서 사용하는 변수나, 서식을 넣어주는 방법
 
-            /////////////////////////////////////////////////////////////////////////////////////////////////
-            
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+
             string str = "kyungil Game Academy";
             Console.WriteLine("Game이 시작되는 위치는 어디인고? : {0}", str.IndexOf("Game"));
             // 대소문자 구분 : game 은 -1뜸 실패하면 -1을 return  
@@ -92,28 +90,37 @@ namespace CSharp004
 
             // StringBuilder : 자주 변경될 문자열은 StringBuilder 사용 (문자열과 관련된 연산이 많을때)
 
+            //StringBuilder->정리(string VS stringBuilder)
+
+            //문자열 뒤집기
+            //abcd -> dcba
+
+            //string str = "abcde";
+            //string reverseString = new string(str.Reverse().ToArray());
+
+            //Console.WriteLine(reverseString);
 
 
-            Stopwatch strWatch = Stopwatch.StartNew();
+            //Stopwatch strWatch = Stopwatch.StartNew();
 
-            string strRes = "";
+            //string strRes = "";
 
-            const int Test = 200000;
-            for (int i = 0; i < Test; i++)
-            {
-                strRes += "a";
-            }
-            strWatch.Stop();
-            Console.WriteLine($"스트링{strWatch.ElapsedMilliseconds}마이크로 초");
+            //const int Test = 200000;
+            //for (int i = 0; i < Test; i++)
+            //{
+            //    strRes += "a";
+            //}
+            //strWatch.Stop();
+            //Console.WriteLine($"스트링{strWatch.ElapsedMilliseconds}마이크로 초");
 
-            Stopwatch strBuilderWatch = Stopwatch.StartNew();
-            StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 0; i < Test; i++)
-            {
-                stringBuilder.Append("a");
-            }
-            strBuilderWatch.Stop();
-            Console.WriteLine($"스트링{strBuilderWatch.ElapsedMilliseconds}마이크로 초");
+            //Stopwatch strBuilderWatch = Stopwatch.StartNew();
+            //StringBuilder stringBuilder = new StringBuilder();
+            //for (int i = 0; i < Test; i++)
+            //{
+            //    stringBuilder.Append("a");
+            //}
+            //strBuilderWatch.Stop();
+            //Console.WriteLine($"스트링{strBuilderWatch.ElapsedMilliseconds}마이크로 초");
         }
     }
 }

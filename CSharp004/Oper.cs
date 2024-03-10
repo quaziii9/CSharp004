@@ -8,6 +8,19 @@ namespace CSharp004
         // 해당 타입에 맞게 재정의 함
         // 기본 연산자의 연산을 재정의하여 구현
 
+        public struct Ex
+        {
+            public int value;
+            public Ex(int value)
+            {
+                this.value = value;
+            }
+            public static Ex operator +(Ex left, int right)
+            {
+                return new Ex(left.value +right + right);
+            }
+        }
+
         public struct Point
         { 
             public int x; 
@@ -24,19 +37,31 @@ namespace CSharp004
             { 
                 return new Point(left.x + right.x, left.y + right.y);
             }
+            public static Point operator -(Point left, Point right)
+            {
+                return new Point(left.x * right.x, left.y * right.y);
+            }
 
             public override string ToString()
             {
                 return $"({x}, {y})";
             }
         }
+
+
         static void Main(string[] args)
         {
-            Point point = new Point(3,3)+ new Point(2,5);
+            Point point = new Point(3,3) + new Point(2,5);
 
-            Console.WriteLine(point.ToString());
+           // Console.WriteLine(point.ToString());
+
+            Point point1 = new Point(2, 3);
+            Point point2 = new Point(1, 5);
+           // Console.WriteLine(point1-point2);
+
+            Ex num = new Ex(5) + 3;
+            
+            Console.WriteLine(num.value);
         }
-
-      
     }
 }

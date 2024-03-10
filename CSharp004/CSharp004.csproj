@@ -11,6 +11,7 @@
     <Compile Remove="Array.cs" />
     <Compile Remove="Oper.cs" />
     <Compile Remove="Program.cs" />
+    <Compile Remove="Reverse.cs" />
     <Compile Remove="StringClass.cs" />
   </ItemGroup>
 
@@ -18,6 +19,7 @@
     <None Include="Array.cs" />
     <None Include="Oper.cs" />
     <None Include="Program.cs" />
+    <None Include="Reverse.cs" />
     <None Include="StringClass.cs" />
   </ItemGroup>
 
